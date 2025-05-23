@@ -1,0 +1,40 @@
+﻿@model List<u24634400_Prac7.Models.Publication>
+@using u24634400_Prac7.Models
+@{
+    ViewBag.Title = "Publications";
+}
+
+<div class="container">
+    <div class="row">
+        @foreach (var publication in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="@publication.ImageUrl" class="card-img-top" alt="Publication image">
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">@publication._type</h6>
+                        <h5 class="card-title">@publication.Title</h5>
+                        <p class="card-text">
+                            <strong>by @publication.Author.FullName</strong><br />
+                            @publication.Summary
+                        </p>
+                        <a href="@publication.MoreInfoUrl" target="_blank">Read more</a>
+                    </div>
+                    <div class="card-footer">
+                        @if (publication is Book book)
+                        {
+                            <small class="text-muted">
+                                First publication date is @book.PublishDate.ToString("D")<br />
+                                Number of editions is @book.Editions
+                            </small>
+                        }
+                        else
+                        {
+                            <small class="text-muted">The date of publication is @publication.PublishDate.ToString("D")</small>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
