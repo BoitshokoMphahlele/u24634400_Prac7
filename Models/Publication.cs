@@ -16,7 +16,7 @@ namespace u24634400_Prac7.Models
             public string ImageUrl { get; set; }
 
         public Publication(string Type,string title, Author author, string summary, string moreInfoUrl, DateTime publishDate,string image)
-            {
+        {
                 _type = Type;
                 Title = title;
                 Author = author;
@@ -24,7 +24,7 @@ namespace u24634400_Prac7.Models
                 MoreInfoUrl = moreInfoUrl;
                 PublishDate = publishDate;
                 ImageUrl = image;
-            }
+        }
 
             
 
