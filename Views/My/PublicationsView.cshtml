@@ -24,13 +24,16 @@
                         @if (publication is Book book)
                         {
                             <small class="text-muted">
-                                First publication date is @book.PublishDate.ToString("D")<br />
-                                Number of editions is @book.Editions
+                                First publication date is @book.DisplayDate()<br />
+                                Number of editions is @book.DisplayEditions()
                             </small>
                         }
                         else
                         {
-                            <small class="text-muted">The date of publication is @publication.PublishDate.ToString("D")</small>
+                            if (publication is Article article)
+                            {
+                                <small class="text-muted">The date of publication is @article.DisplayDate() </small>
+                            }
                         }
                     </div>
                 </div>

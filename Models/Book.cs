@@ -22,13 +22,11 @@ namespace u24634400_Prac7.Models
 
         public string DisplayDate()
         {
-            return PublishDate.ToString("dd MMM yyyy");
+            return PublishDate.ToString("dddd, dd MMMM yyyy");
         }
 
-        public string GetPublicationType()
-        {
-            return "Book";
-        }
+
+       
 
 
 
